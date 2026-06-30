@@ -1,0 +1,2743 @@
+{
+  "title": "Arcent Nano — 50+ tx E2E demo",
+  "network": "arcTestnet",
+  "buyer": "0x29C2F998B325053F2e81532b5e3a44dac7A84978",
+  "seller": "http://localhost:3000",
+  "depositAmount": "3",
+  "depositTxHash": "0x98ca82f24bafe429705145a1baaae93f2a59603ec0f53cbef8be5eeca3c499d4",
+  "approvalTxHash": "0x11aeca0063f3030f0c1eba258bbdbbd0b236c1d337bae99d82e16da9f3899a2a",
+  "totalCalls": 300,
+  "totalSpentUsdc": "3.097500",
+  "endpoints": [
+    {
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "price": 0.001
+    },
+    {
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "price": 0.01
+    },
+    {
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "price": 0.0003
+    },
+    {
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "price": 0.03
+    }
+  ],
+  "marginComparison": {
+    "traditionalCctpGasPerCall": "~0.30",
+    "traditional50calls": "~15.00",
+    "nanoGasTotal": "~0.05",
+    "nanoSpend": "3.097500",
+    "gasSavings": "300x+"
+  },
+  "calls": [
+    {
+      "idx": 1,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "d36809de-72cb-47a5-89b9-b4fc4fc03ca0",
+      "status": 200,
+      "latencyMs": 369
+    },
+    {
+      "idx": 2,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "0904d16a-d827-4cb6-839f-018343f255cf",
+      "status": 200,
+      "latencyMs": 354
+    },
+    {
+      "idx": 3,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "98b21f5a-08eb-45d1-bef3-de8322652469",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 4,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "798ca747-fe89-4aed-904f-357811f90f1b",
+      "status": 200,
+      "latencyMs": 372
+    },
+    {
+      "idx": 5,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "b5fa8d0a-92da-4b89-9ee2-945f062e377c",
+      "status": 200,
+      "latencyMs": 342
+    },
+    {
+      "idx": 6,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "ca0d236d-88e0-4c5c-ad95-0520cb0484ea",
+      "status": 200,
+      "latencyMs": 351
+    },
+    {
+      "idx": 7,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "67cd81f9-3337-470c-bcd1-c493fe6aa57f",
+      "status": 200,
+      "latencyMs": 344
+    },
+    {
+      "idx": 8,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "b76dc23c-2704-4046-bdde-d001746ddeba",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 9,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "246cb567-27dc-4d5a-986a-1a854cc0a102",
+      "status": 200,
+      "latencyMs": 309
+    },
+    {
+      "idx": 10,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "e6e78638-1331-45b0-ae5b-8087dc8bb8d0",
+      "status": 200,
+      "latencyMs": 341
+    },
+    {
+      "idx": 11,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "256a1f08-de56-49e1-ae81-689c9f1f02fd",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 12,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "6b4a3278-8dfc-4968-80e0-9259676bae6c",
+      "status": 200,
+      "latencyMs": 346
+    },
+    {
+      "idx": 13,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "19608124-1648-48b5-b51f-22e6ac2e699c",
+      "status": 200,
+      "latencyMs": 320
+    },
+    {
+      "idx": 14,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "582f2ed3-283e-4770-a189-471abca9d74b",
+      "status": 200,
+      "latencyMs": 319
+    },
+    {
+      "idx": 15,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "f50c3ff4-58fc-425e-a362-a34211179d90",
+      "status": 200,
+      "latencyMs": 355
+    },
+    {
+      "idx": 16,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "7117d94d-f190-4b79-b684-c395d5ff5dce",
+      "status": 200,
+      "latencyMs": 343
+    },
+    {
+      "idx": 17,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "644e1d53-22a9-40d5-9731-68423b2870e4",
+      "status": 200,
+      "latencyMs": 410
+    },
+    {
+      "idx": 18,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "4e9d9df0-541c-4009-b5e7-2cd394ee2401",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 19,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "27dc1fb3-111e-4577-909c-66a3b0f9d9d6",
+      "status": 200,
+      "latencyMs": 316
+    },
+    {
+      "idx": 20,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "5763a312-6f3f-44c4-a63e-3b3dd67ef40d",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 21,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "75fa1b06-6cb8-4634-89ef-a9d84cd7d9c9",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 22,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "45649a6b-a5db-4b4a-8f8c-16f2de890e52",
+      "status": 200,
+      "latencyMs": 344
+    },
+    {
+      "idx": 23,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "6e4d89ef-854d-4b47-ac71-d770b1942884",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 24,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "7228fca4-1248-45bd-88ae-53bb2d786381",
+      "status": 200,
+      "latencyMs": 342
+    },
+    {
+      "idx": 25,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "dfcfcc38-1913-4b39-8693-d5dc7f120687",
+      "status": 200,
+      "latencyMs": 421
+    },
+    {
+      "idx": 26,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "f465619e-7c9f-4611-909e-4cfbb27a6f6d",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 27,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "d5f589b1-d593-4572-8fbc-94a4893d094d",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 28,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "8dd8f553-075d-41f3-9bc7-31be746c5336",
+      "status": 200,
+      "latencyMs": 343
+    },
+    {
+      "idx": 29,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "0bf832ac-27a1-4c23-b921-4ccc4b238fa0",
+      "status": 200,
+      "latencyMs": 358
+    },
+    {
+      "idx": 30,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "b6b76bba-72b6-49b7-8b51-01bfdea533e0",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 31,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "fbf91b43-5c06-4892-baee-bee6b9a7d1c2",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 32,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "533ae7fb-8379-403c-b095-c7b678ea204d",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 33,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "5e051fd8-ea26-44db-b500-0e1b5f020948",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 34,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "ac6406e5-89eb-40cc-9ca8-3746d3bbe8ff",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 35,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "d89e3b09-32ee-48b1-bba8-ac56338334ef",
+      "status": 200,
+      "latencyMs": 337
+    },
+    {
+      "idx": 36,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "20886c70-cb5e-4524-babc-015088184e10",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 37,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "39e598f3-6a2e-4346-967d-7b439a34fa8a",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 38,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "bf447cc3-2150-4e29-9c98-82dd2d5c1bd9",
+      "status": 200,
+      "latencyMs": 406
+    },
+    {
+      "idx": 39,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "d4bb41b7-729e-452c-bebc-4ffec98c6c67",
+      "status": 200,
+      "latencyMs": 335
+    },
+    {
+      "idx": 40,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "72e798b0-9c2a-4359-b42d-c15d80116fa0",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 41,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "8b4ef710-6426-446a-93f5-105714480811",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 42,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "132f7797-7ec6-46e6-afb3-028fa867e805",
+      "status": 200,
+      "latencyMs": 313
+    },
+    {
+      "idx": 43,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "0663379a-f1a6-4581-bd82-a4274f9d4380",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 44,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "5d25a726-6009-4e54-a52a-1ab2e265265d",
+      "status": 200,
+      "latencyMs": 363
+    },
+    {
+      "idx": 45,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "54f17cba-47df-43a5-ba3d-2019974041de",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 46,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "49725208-663f-4552-ac97-becd48e1e319",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 47,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "6db00b94-caf5-4a97-9b99-8b7b39c5f1aa",
+      "status": 200,
+      "latencyMs": 343
+    },
+    {
+      "idx": 48,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "0806bff0-e43a-4723-a2c7-8ba3f5d79fa4",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 49,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "488c61f7-77e1-427f-ae51-9e1c1fcc3567",
+      "status": 200,
+      "latencyMs": 317
+    },
+    {
+      "idx": 50,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "2376b144-aabe-4423-8d9c-cbe050b30340",
+      "status": 200,
+      "latencyMs": 423
+    },
+    {
+      "idx": 51,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "7c60c5a7-f3c6-4346-94c9-4e7f08a5e391",
+      "status": 200,
+      "latencyMs": 342
+    },
+    {
+      "idx": 52,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "2f3be528-70b7-4fa2-a0c6-02530c75bb50",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 53,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "dbc4434b-729e-473f-b15b-12faa13bffba",
+      "status": 200,
+      "latencyMs": 339
+    },
+    {
+      "idx": 54,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "e3e89b1c-41f7-4323-bbd3-d8ce8cfaa671",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 55,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "36a46525-b43f-426c-be14-142cc854db7a",
+      "status": 200,
+      "latencyMs": 367
+    },
+    {
+      "idx": 56,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "e665c311-6a7f-433d-805b-7cb66436a475",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 57,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "d8834086-20ad-4689-b35c-a7980dae8922",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 58,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "7538a748-f38d-4f28-a70b-fde41c85ea27",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 59,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "0dd2cf59-3b52-431a-8d4a-ccc38d246221",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 60,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "95bddf6b-0a36-488e-bfd2-383bd4ac0a33",
+      "status": 200,
+      "latencyMs": 345
+    },
+    {
+      "idx": 61,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "650352b1-ad6c-4c26-94b5-eae76870f088",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 62,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "5a71f7c9-497e-421f-a6e7-5c0d53f8a498",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 63,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "371f1b9a-7085-4516-ab43-cfa855b256d2",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 64,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "da9ac018-d03c-44e6-a01e-bd3ff352294e",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 65,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "f3c05fe0-179c-4e9c-845e-ca04b9709545",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 66,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "37152854-27f3-48dd-8b7c-617c5c889fdb",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 67,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "e53e13cb-2503-4bac-ad7d-c09b61ed0703",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 68,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "322c61c2-727a-4d6e-a2ed-59596503d255",
+      "status": 200,
+      "latencyMs": 645
+    },
+    {
+      "idx": 69,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "3122ac90-c438-40e3-beb0-b3869b0f847a",
+      "status": 200,
+      "latencyMs": 319
+    },
+    {
+      "idx": 70,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "d353b9b1-3d7e-4eb8-894a-92c0681472df",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 71,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "e1f22c3b-be5a-4b4c-83c6-b1333e3d42e6",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 72,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "29256afc-debd-4c3f-98f2-76b2937567db",
+      "status": 200,
+      "latencyMs": 339
+    },
+    {
+      "idx": 73,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "4654ee97-a4d3-414d-a708-2809f78e4cf7",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 74,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "b0638797-a7be-4347-bcb3-e370819fcc1e",
+      "status": 200,
+      "latencyMs": 337
+    },
+    {
+      "idx": 75,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "185e1b03-054b-4357-8b9a-f80c239cee62",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 76,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "b2052738-17c1-4683-832e-63b0387a2238",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 77,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "c69ae0b4-7c49-4047-b2b7-0487a55b438e",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 78,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "6d84d264-6bd1-4336-93f0-1421272fd488",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 79,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "6de59084-43c6-449b-9b69-80f6fbd93f97",
+      "status": 200,
+      "latencyMs": 377
+    },
+    {
+      "idx": 80,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "b87e4fa6-3916-490d-9b42-80ea1a0521c3",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 81,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "77cbe33b-6bc2-4a83-847f-95115a6b572d",
+      "status": 200,
+      "latencyMs": 337
+    },
+    {
+      "idx": 82,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "9b89791e-b572-4504-8006-a967a103db96",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 83,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "1deeca19-4781-46c6-a3ea-c9990ef95d45",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 84,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "75519346-f21e-4e05-aa60-c4d49cc6ac38",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 85,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "9c08a0ea-c4c8-4626-a09b-4b48eeb9a9c4",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 86,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "481b3ca3-9283-456e-ad67-7425424ed898",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 87,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "c48dc57d-9ad0-4afb-8702-57baa90ebe14",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 88,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "de7cc3d3-338a-4c47-95b7-103b5911ce43",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 89,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "963d325d-7d90-413c-a62e-d32cc3640866",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 90,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "a71606d3-aa36-4f7c-b0bb-4f7378bb0c71",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 91,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "d9a81f09-bdd0-402a-9acb-7ce716252281",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 92,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "f87e0a50-5692-4f5c-9768-1f653ea9e09d",
+      "status": 200,
+      "latencyMs": 343
+    },
+    {
+      "idx": 93,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "bce67486-ea1d-44eb-822d-79f04d2a131b",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 94,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "298e4ce2-8163-4a37-838d-706913da4692",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 95,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "c5344a2b-03cd-4ef5-8bd1-5b497adfdb87",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 96,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "dde9b669-b545-4e02-b873-f5cc1dac507a",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 97,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "6eb459e5-5a1a-4f64-9c09-dfcb0fd0641f",
+      "status": 200,
+      "latencyMs": 335
+    },
+    {
+      "idx": 98,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "eb65b9e8-5439-4689-9b4c-e16a8757dd77",
+      "status": 200,
+      "latencyMs": 362
+    },
+    {
+      "idx": 99,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "99a6eae9-c4d1-4cf0-b17c-e127da3b2abf",
+      "status": 200,
+      "latencyMs": 350
+    },
+    {
+      "idx": 100,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "aebea698-e03a-4dab-9cd5-e2f947dc89c3",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 101,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "09896ee1-07dc-4961-8fe5-e5498966b5b5",
+      "status": 200,
+      "latencyMs": 313
+    },
+    {
+      "idx": 102,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "c56ce2ea-e26d-4017-b432-a8e6225dba17",
+      "status": 200,
+      "latencyMs": 377
+    },
+    {
+      "idx": 103,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "9061dfc4-4f5c-43b8-860b-67a5d8292c1f",
+      "status": 200,
+      "latencyMs": 311
+    },
+    {
+      "idx": 104,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "957b06c0-6eed-4a7e-8fc5-24d25e77b64f",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 105,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "6ab11b2b-f19c-46c3-95d9-40e0dd79520e",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 106,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "5b3bc35a-68f2-41ef-ac47-2d0c5e4c6f8b",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 107,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "2295ab48-af71-4271-9d9e-43998944bafb",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 108,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "0f787944-ef33-4f53-a695-e859a31c49b6",
+      "status": 200,
+      "latencyMs": 335
+    },
+    {
+      "idx": 109,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "93403976-7f0e-4dc7-85cf-8b45aad230c4",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 110,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "a094541a-cb44-40fb-bfe9-c3863770cb53",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 111,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "68bdb4bc-971e-4eb6-9950-73ec5d0444c8",
+      "status": 200,
+      "latencyMs": 310
+    },
+    {
+      "idx": 112,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "6fd0660a-18d9-4eee-a1a5-2795a8bd9f26",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 113,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "16270031-51b1-4da7-891b-a9d824c94f44",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 114,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "dcb0904e-9735-4901-a938-dad607e06abf",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 115,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "17dca879-a5d1-46af-b7de-ee64f84d5fb6",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 116,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "2600d72d-acb6-465d-a168-551c4ce11cd7",
+      "status": 200,
+      "latencyMs": 339
+    },
+    {
+      "idx": 117,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "50711c81-10f0-4c66-8370-ac52f2cfd633",
+      "status": 200,
+      "latencyMs": 360
+    },
+    {
+      "idx": 118,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "463a2dd8-9c75-49ce-8316-27231adb7458",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 119,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "df6b6459-002c-4f34-a2bd-f58dd7fa8117",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 120,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "3959381f-9ca6-4ae8-9611-ee0c9ec33e67",
+      "status": 200,
+      "latencyMs": 361
+    },
+    {
+      "idx": 121,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "bb09986b-9601-41ad-952b-77cf844afbdc",
+      "status": 200,
+      "latencyMs": 351
+    },
+    {
+      "idx": 122,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "e6198a95-2c0e-417b-8b97-7790c04e58e2",
+      "status": 200,
+      "latencyMs": 335
+    },
+    {
+      "idx": 123,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "3cdc03b2-a328-458a-aec9-430dfecd36d2",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 124,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "1e461543-552c-430c-a63a-7ce435255fd6",
+      "status": 200,
+      "latencyMs": 314
+    },
+    {
+      "idx": 125,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "8f58c230-68ba-4614-ac15-08e61377e385",
+      "status": 200,
+      "latencyMs": 321
+    },
+    {
+      "idx": 126,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "f0a5ac10-d146-4734-9bc1-8b0cc3b643d4",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 127,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "8d178dfa-c77b-44d6-bf2b-4fe0ccdc5eda",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 128,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "f7746cb6-99dc-433b-9db3-91a924e48593",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 129,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "c86b2273-5f47-4938-a7b9-fc6f525cd11c",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 130,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "c64045f0-8879-4d06-86de-8663f0311967",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 131,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "9459d88a-aef5-40ba-971d-2f1972de92b9",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 132,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "60987b6f-4fa5-4e47-a816-973f0de1714d",
+      "status": 200,
+      "latencyMs": 308
+    },
+    {
+      "idx": 133,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "c2ed2eb1-9454-4581-a281-53f80cdfe934",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 134,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "accfbc72-e6b4-4c4d-b7ce-dcc9bfa76a65",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 135,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "6ac49704-1a60-46d9-b910-7743e8c4ce01",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 136,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "983ebecd-1776-48cf-966d-4992afd7d7df",
+      "status": 200,
+      "latencyMs": 319
+    },
+    {
+      "idx": 137,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "4553a169-0891-42b3-a917-c4d4b15a9b7a",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 138,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "eebcc491-7f06-4471-9dc4-3de5b60fe33e",
+      "status": 200,
+      "latencyMs": 313
+    },
+    {
+      "idx": 139,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "1880fab2-1cf8-4705-8028-716ca363cc7a",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 140,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "12589af8-11b8-4c0f-ad18-44b471bf7b7d",
+      "status": 200,
+      "latencyMs": 321
+    },
+    {
+      "idx": 141,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "e75bac1b-6464-42d7-8a05-be2668ceaf6b",
+      "status": 200,
+      "latencyMs": 341
+    },
+    {
+      "idx": 142,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "f8cb53ff-505f-4be6-9340-7ca18a408056",
+      "status": 200,
+      "latencyMs": 374
+    },
+    {
+      "idx": 143,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "016399c9-370b-418d-93e6-057f9f78d0b0",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 144,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "d6474435-8e85-48ba-b465-b13dfafb636d",
+      "status": 200,
+      "latencyMs": 321
+    },
+    {
+      "idx": 145,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "69bb8057-fc1e-4467-a6b4-bfb39d3f3bb3",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 146,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "29f3dbce-14eb-4862-9e57-36ee73ba72e5",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 147,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "220beacb-0def-4acf-a5d2-5d6673e8db39",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 148,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "7dc1af75-bb84-4fd0-89dd-cdd2a5d8a687",
+      "status": 200,
+      "latencyMs": 335
+    },
+    {
+      "idx": 149,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "42cc7a34-0e70-40bc-8932-7cb5ae485e78",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 150,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "ffdeca32-5a0f-4c7c-ac60-7892e690877d",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 151,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "fc52df4f-b512-41ae-b656-e7109deadefa",
+      "status": 200,
+      "latencyMs": 316
+    },
+    {
+      "idx": 152,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "712b8505-c430-4f2b-9619-60b3d8589bcb",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 153,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "48b7c48a-896e-4c1c-8232-0a8c946525ca",
+      "status": 200,
+      "latencyMs": 350
+    },
+    {
+      "idx": 154,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "3a13d551-88ea-4f16-9223-3abae5579912",
+      "status": 200,
+      "latencyMs": 334
+    },
+    {
+      "idx": 155,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "d433489f-bb9f-4a1a-9826-9bdb99ec7121",
+      "status": 200,
+      "latencyMs": 316
+    },
+    {
+      "idx": 156,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "9412e279-2c22-42e4-89b3-992802e01237",
+      "status": 200,
+      "latencyMs": 337
+    },
+    {
+      "idx": 157,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "b1c5e528-bd2a-4c9b-8470-f8057835bc3e",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 158,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "a6ba13b3-252c-4f87-b01d-e94f44703e3e",
+      "status": 200,
+      "latencyMs": 414
+    },
+    {
+      "idx": 159,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "acca6753-f56a-49eb-997c-cf53a4b1bb52",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 160,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "45ca3c1a-a0d1-497f-8c2c-21a6ad822bf9",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 161,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "52f3720e-1189-4b0e-a1c9-48e66413f108",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 162,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "e05c0bdf-2528-4767-8a19-14203645fbd3",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 163,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "0db5b6c8-66ea-4ae0-980d-2e260278c508",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 164,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "42e4a83a-6b41-4efa-8e90-9e0982fe06db",
+      "status": 200,
+      "latencyMs": 420
+    },
+    {
+      "idx": 165,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "327a993c-1a2a-44f6-9296-84d62e6df675",
+      "status": 200,
+      "latencyMs": 350
+    },
+    {
+      "idx": 166,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "63aa2d99-9fd7-4776-8feb-ec72b47d00ab",
+      "status": 200,
+      "latencyMs": 357
+    },
+    {
+      "idx": 167,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "29a80bfd-2f93-4e7e-8ada-6d4eb7f3c3bf",
+      "status": 200,
+      "latencyMs": 341
+    },
+    {
+      "idx": 168,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "5a3d6b8a-f024-4d0e-9849-0e5a3ffb06e1",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 169,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "6017fa8b-36c4-4042-b7d4-82185917daa1",
+      "status": 200,
+      "latencyMs": 582
+    },
+    {
+      "idx": 170,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "760cdd68-be25-4efb-a0ae-0e00ef6a2c39",
+      "status": 200,
+      "latencyMs": 319
+    },
+    {
+      "idx": 171,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "18a1cac0-183f-4220-8ddd-7ead495eeb25",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 172,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "2be0f482-dd60-4344-b770-34df3dda44f5",
+      "status": 200,
+      "latencyMs": 312
+    },
+    {
+      "idx": 173,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "dd5387fc-746d-4912-89c1-c1bbd7c6bdcc",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 174,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "4622ba82-cece-45e4-8ecd-9627e5131246",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 175,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "10f2d904-0f30-45b5-90f7-4a3ebd3f098e",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 176,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "79b76eae-ccb8-4364-9930-3c70dfedefd1",
+      "status": 200,
+      "latencyMs": 317
+    },
+    {
+      "idx": 177,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "4a14eb61-c112-48e9-a923-1823c4688cd2",
+      "status": 200,
+      "latencyMs": 403
+    },
+    {
+      "idx": 178,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "61cd88c7-0bc6-4e24-af36-b3f9de63a67c",
+      "status": 200,
+      "latencyMs": 349
+    },
+    {
+      "idx": 179,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "a3f5b81e-e9d0-4063-aeb8-b8b8f0b497a4",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 180,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "f8608df8-91f8-4a22-8a99-b38463f482c5",
+      "status": 200,
+      "latencyMs": 357
+    },
+    {
+      "idx": 181,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "4350b833-7d0b-4e3d-a2a0-60616c6a0cd1",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 182,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "57126699-4753-4725-a52e-949f1c6b1193",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 183,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "9d124beb-facc-4f49-9a06-1278b6c1fa99",
+      "status": 200,
+      "latencyMs": 312
+    },
+    {
+      "idx": 184,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "b094f6ee-02d0-43a6-bfc7-3e06b864639b",
+      "status": 200,
+      "latencyMs": 348
+    },
+    {
+      "idx": 185,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "5fa04b37-8eff-4615-83fd-b43267aaa5d6",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 186,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "1037bc0c-b474-403c-bd0d-646b783c687f",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 187,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "ad95e13d-1d31-4ea4-b66f-b30d85982edb",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 188,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "24af89b1-ed8b-46f8-ae42-b13fdb01ba49",
+      "status": 200,
+      "latencyMs": 351
+    },
+    {
+      "idx": 189,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "f8b22b38-2bd8-40bd-9d7a-8c67c97a3ec7",
+      "status": 200,
+      "latencyMs": 344
+    },
+    {
+      "idx": 190,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "7762385f-6b25-40f8-a0d0-ad202c96397c",
+      "status": 200,
+      "latencyMs": 339
+    },
+    {
+      "idx": 191,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "3773c5c4-fecb-4c54-930c-0236d6ffd6b5",
+      "status": 200,
+      "latencyMs": 337
+    },
+    {
+      "idx": 192,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "4bbf6334-1421-465b-9847-80f861f2a00b",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 193,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "53945600-b13f-4e30-98b0-de419de6ae2a",
+      "status": 200,
+      "latencyMs": 322
+    },
+    {
+      "idx": 194,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "8a93772a-03cc-4b22-a6fe-bea35db06c86",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 195,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "5c77f1a7-ceed-422d-8d2c-4322c8d6cf8d",
+      "status": 200,
+      "latencyMs": 319
+    },
+    {
+      "idx": 196,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "2bd52b65-eb49-4569-8949-db7702907074",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 197,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "948d41a2-96a4-4ffb-b1db-5ec5c2129442",
+      "status": 200,
+      "latencyMs": 316
+    },
+    {
+      "idx": 198,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "183f7995-baaa-45b7-bd15-075fcfa174ba",
+      "status": 200,
+      "latencyMs": 321
+    },
+    {
+      "idx": 199,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "1aaed16f-7ff3-4a8f-bcc3-7dfd27c8f03b",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 200,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "459bfb66-acc4-4a97-9c7c-ab67c7cb359b",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 201,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "0ab210f1-fc53-40f4-a094-f704bbff400c",
+      "status": 200,
+      "latencyMs": 320
+    },
+    {
+      "idx": 202,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "51d16ccb-6826-4583-9f8a-06315538339d",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 203,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "5f694bb4-10c8-40c2-9515-c1f9796f7f6e",
+      "status": 200,
+      "latencyMs": 314
+    },
+    {
+      "idx": 204,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "bdc39c95-5ea6-454e-a288-2fdd36f191ae",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 205,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "cfa02ac8-a76c-4805-9125-3271defee673",
+      "status": 200,
+      "latencyMs": 311
+    },
+    {
+      "idx": 206,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "6dbd88e3-60f2-4b8c-a2cd-1018d5715175",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 207,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "4b3a7a9a-4107-468d-8bfb-e3df4bdf6ec1",
+      "status": 200,
+      "latencyMs": 342
+    },
+    {
+      "idx": 208,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "cac07dfb-c6f1-40cc-97fc-bb593d1f8f7d",
+      "status": 200,
+      "latencyMs": 317
+    },
+    {
+      "idx": 209,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "871ebdeb-955d-4f38-a64f-41ecf203e0f4",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 210,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "5bc15673-e677-4004-ae9d-6896b4ab7fef",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 211,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "c3b59854-e1b2-442a-afea-037f51919d5e",
+      "status": 200,
+      "latencyMs": 343
+    },
+    {
+      "idx": 212,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "a3f9de37-7080-444f-872d-43f4d7d248cd",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 213,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "a6b3c500-b491-4a97-8782-526c1152daa2",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 214,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "5aaf8503-6732-4c73-968c-bdba5f8717c1",
+      "status": 200,
+      "latencyMs": 339
+    },
+    {
+      "idx": 215,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "05704992-16a4-4fa5-a8aa-6f253511615c",
+      "status": 200,
+      "latencyMs": 351
+    },
+    {
+      "idx": 216,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "7c3aa0bf-7474-4cef-85ac-34065e3e81cb",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 217,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "13f29eef-00c5-4539-98b2-e2d6fc1ec85b",
+      "status": 200,
+      "latencyMs": 314
+    },
+    {
+      "idx": 218,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "fcae9d1d-524c-44fa-935f-6433d552bb67",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 219,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "947c5a53-849b-45a6-aaf3-713664c77992",
+      "status": 200,
+      "latencyMs": 344
+    },
+    {
+      "idx": 220,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "d0c8398d-01be-4b48-903d-f2f824deeaff",
+      "status": 200,
+      "latencyMs": 608
+    },
+    {
+      "idx": 221,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "038d8d9e-7446-4393-b169-07619d823de0",
+      "status": 200,
+      "latencyMs": 347
+    },
+    {
+      "idx": 222,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "9ea27aa4-8848-4e96-badd-4d518991dfeb",
+      "status": 200,
+      "latencyMs": 335
+    },
+    {
+      "idx": 223,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "3496e952-67c7-4fd0-bc1e-359f432261c2",
+      "status": 200,
+      "latencyMs": 328
+    },
+    {
+      "idx": 224,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "06a469ae-1824-4ae1-8e37-0386031b86ae",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 225,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "2494b7af-ffb5-4f09-a70e-b726f21122b4",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 226,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "ce630fca-eef8-4c1f-825e-318610201a18",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 227,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "25bab6f1-6d2a-4815-ac7e-7ffbf7b14c9c",
+      "status": 200,
+      "latencyMs": 341
+    },
+    {
+      "idx": 228,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "edab10da-e348-4868-90a7-63e7b03e6693",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 229,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "4644103e-77da-4577-924c-8301c9feef13",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 230,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "b6efd481-cd51-4928-bdd7-6dc918a90e6a",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 231,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "aee21731-dc17-4e67-b8f8-a324907cf457",
+      "status": 200,
+      "latencyMs": 345
+    },
+    {
+      "idx": 232,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "d98a250a-b3fc-4ad5-8424-f803250b27cf",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 233,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "5e6e7c9c-175e-4a76-bef8-8481d0b1eecc",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 234,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "d2f4a871-56d6-4cb1-937a-62ae2563ced9",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 235,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "31d4d2a7-2142-4c12-bef1-2cc4ac730435",
+      "status": 200,
+      "latencyMs": 346
+    },
+    {
+      "idx": 236,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "86a20057-d5eb-4270-872d-2525ea52105f",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 237,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "9f93d8c2-1d8b-4a8d-9160-373bd9405d63",
+      "status": 200,
+      "latencyMs": 346
+    },
+    {
+      "idx": 238,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "fcbdffe0-3db2-4fcd-8cad-f5a21d8b880a",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 239,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "39e8c1d4-f567-4099-b433-37f00b9089fd",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 240,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "ceb058d2-6859-4b8f-9aab-5edd3f356279",
+      "status": 200,
+      "latencyMs": 341
+    },
+    {
+      "idx": 241,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "2f09042b-eef7-44ab-a6ca-db3789c83cdd",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 242,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "1bfd74a8-a791-42f5-8523-a7e865cce624",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 243,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "217a26cb-d936-41a4-ac89-aaf2e2d82757",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 244,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "176be532-c8e5-4301-8887-6b7c34130a4e",
+      "status": 200,
+      "latencyMs": 349
+    },
+    {
+      "idx": 245,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "59adaad3-4b04-49d0-9977-ae30dccf316e",
+      "status": 200,
+      "latencyMs": 342
+    },
+    {
+      "idx": 246,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "6591a5ba-cdb8-4229-ae58-04e1ddd1fcc7",
+      "status": 200,
+      "latencyMs": 326
+    },
+    {
+      "idx": 247,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "f70c97e1-b604-4624-b598-6e6fed302788",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 248,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "c7ec14c5-76a5-4466-9bd2-07291cc3b8f3",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 249,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "103e06f4-643c-4901-9f2c-f16cb09bd864",
+      "status": 200,
+      "latencyMs": 325
+    },
+    {
+      "idx": 250,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "cdf14722-3aaa-4003-8841-6d85e3b63046",
+      "status": 200,
+      "latencyMs": 364
+    },
+    {
+      "idx": 251,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "0f2434eb-d60b-464a-8c1e-63632b98fdab",
+      "status": 200,
+      "latencyMs": 344
+    },
+    {
+      "idx": 252,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "d219235a-eee9-4e13-81b8-5aa8c62db625",
+      "status": 200,
+      "latencyMs": 342
+    },
+    {
+      "idx": 253,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "bccd1ac2-6a2a-4d45-ad2b-013c93cd9545",
+      "status": 200,
+      "latencyMs": 351
+    },
+    {
+      "idx": 254,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "8e81f1de-702f-4066-8ace-6d57cbfba6bd",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 255,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "1021d0a7-ddfb-4527-bb00-d46edb058b30",
+      "status": 200,
+      "latencyMs": 402
+    },
+    {
+      "idx": 256,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "316d00e4-cf8e-471c-9448-aadc5c80b358",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 257,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "55a1d846-02ef-4879-add7-3bb1947d20ac",
+      "status": 200,
+      "latencyMs": 658
+    },
+    {
+      "idx": 258,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "87a5a2dc-3731-4aed-84b7-9c7ccb77294e",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 259,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "9060996d-c450-4f51-b204-af270b76daec",
+      "status": 200,
+      "latencyMs": 317
+    },
+    {
+      "idx": 260,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "d796911e-da47-426c-a2d8-3235c100443c",
+      "status": 200,
+      "latencyMs": 321
+    },
+    {
+      "idx": 261,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "826368b1-c679-4cd5-b253-45673a2dbed4",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 262,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "b731c369-ac57-4f82-9b12-9316a82d6845",
+      "status": 200,
+      "latencyMs": 346
+    },
+    {
+      "idx": 263,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "8ab529aa-9736-4714-a864-0134578db434",
+      "status": 200,
+      "latencyMs": 407
+    },
+    {
+      "idx": 264,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "375d37b0-0751-44e6-81df-c61acca456be",
+      "status": 200,
+      "latencyMs": 321
+    },
+    {
+      "idx": 265,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "29171d5b-d2c4-4f6c-b15e-5d67cc8d6ff1",
+      "status": 200,
+      "latencyMs": 316
+    },
+    {
+      "idx": 266,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "6a7510e2-5d8c-483d-a9df-4f32f0f6d8a5",
+      "status": 200,
+      "latencyMs": 318
+    },
+    {
+      "idx": 267,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "b85c31b9-c873-4b6a-9d4b-144c7d0865fc",
+      "status": 200,
+      "latencyMs": 409
+    },
+    {
+      "idx": 268,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "39ad358d-8bd9-403a-92ca-080cd4173791",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 269,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "66b44b06-a646-45c6-a766-eef17f07555d",
+      "status": 200,
+      "latencyMs": 316
+    },
+    {
+      "idx": 270,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "a3fa2c25-e46f-44c8-89fd-5f3841a6b088",
+      "status": 200,
+      "latencyMs": 414
+    },
+    {
+      "idx": 271,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "297be490-115c-46c2-a980-bfa1407d549b",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 272,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "c3d60c01-ef53-46be-a50d-9e6f2dbd4b56",
+      "status": 200,
+      "latencyMs": 313
+    },
+    {
+      "idx": 273,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "a96ee8ee-e29c-4e00-b75b-78e1866e00ef",
+      "status": 200,
+      "latencyMs": 331
+    },
+    {
+      "idx": 274,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "1bac47e1-959c-4aa2-8e11-5b55fddeda21",
+      "status": 200,
+      "latencyMs": 330
+    },
+    {
+      "idx": 275,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "3ce2405c-90e5-428d-8db7-fe1e39dd07b9",
+      "status": 200,
+      "latencyMs": 361
+    },
+    {
+      "idx": 276,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "da9d034b-8d3f-47f3-b61e-4eb839ac1816",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 277,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "b79e04fb-59ef-439c-9e0f-9c0f4a0547cb",
+      "status": 200,
+      "latencyMs": 332
+    },
+    {
+      "idx": 278,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "827332c9-c7a4-406f-ad76-b51b2d67bb6d",
+      "status": 200,
+      "latencyMs": 320
+    },
+    {
+      "idx": 279,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "a0916086-3818-4d17-908a-7a379d4b822c",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 280,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "c14f7126-9f90-4fc3-af5f-90ce58d95860",
+      "status": 200,
+      "latencyMs": 317
+    },
+    {
+      "idx": 281,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "066eeb65-5067-4c3e-908e-ced258228b95",
+      "status": 200,
+      "latencyMs": 340
+    },
+    {
+      "idx": 282,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "9c8239eb-1e05-43e5-9a44-7a85ad4f2123",
+      "status": 200,
+      "latencyMs": 359
+    },
+    {
+      "idx": 283,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "faa841d8-285c-4d35-b0fd-3e647db723f1",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 284,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "48bea547-66d5-423f-8954-c0138dcc8796",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 285,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "3baf58a7-c978-43f3-808e-b50d0f89c742",
+      "status": 200,
+      "latencyMs": 314
+    },
+    {
+      "idx": 286,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "d2bcd107-d025-4a35-aa2a-9cb6bcb196ff",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 287,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "3a1242a8-a7e7-4a89-bfd0-2eb0d2e8deb4",
+      "status": 200,
+      "latencyMs": 327
+    },
+    {
+      "idx": 288,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "ba8e86a6-d8ed-40b0-ba33-a423aeca873f",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 289,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "77f86529-7449-4608-a222-311a71a741dd",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 290,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "93518cce-e5f7-4f8c-b804-e4e576bf5664",
+      "status": 200,
+      "latencyMs": 354
+    },
+    {
+      "idx": 291,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "9ba61a08-bc5d-4f2f-8989-0c9c253acdb1",
+      "status": 200,
+      "latencyMs": 323
+    },
+    {
+      "idx": 292,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "9f6ba71e-d55d-49c1-89c8-00cf63d3f863",
+      "status": 200,
+      "latencyMs": 336
+    },
+    {
+      "idx": 293,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "2b4d1719-42b1-46fb-ad38-88a1e8adc008",
+      "status": 200,
+      "latencyMs": 352
+    },
+    {
+      "idx": 294,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "f93444b4-fea7-473a-8997-8f6b03a1e9fd",
+      "status": 200,
+      "latencyMs": 338
+    },
+    {
+      "idx": 295,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "006c03cd-502f-4ad1-81b7-7d4efb4ce5e4",
+      "status": 200,
+      "latencyMs": 346
+    },
+    {
+      "idx": 296,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "5f5425c6-c471-4c30-bdd8-89063ed982cd",
+      "status": 200,
+      "latencyMs": 329
+    },
+    {
+      "idx": 297,
+      "url": "http://localhost:3000/api/premium/quote",
+      "method": "GET",
+      "amount": "0.001",
+      "transaction": "61c2b878-617b-4ab8-b13f-052eff24168a",
+      "status": 200,
+      "latencyMs": 313
+    },
+    {
+      "idx": 298,
+      "url": "http://localhost:3000/api/premium/dataset",
+      "method": "GET",
+      "amount": "0.01",
+      "transaction": "93fa4333-7b72-4e9b-bc6c-0bbc715b28d6",
+      "status": 200,
+      "latencyMs": 324
+    },
+    {
+      "idx": 299,
+      "url": "http://localhost:3000/api/premium/compute",
+      "method": "POST",
+      "amount": "0.0003",
+      "transaction": "d5dc03ce-f52e-4199-b1b7-0024b25d34f4",
+      "status": 200,
+      "latencyMs": 333
+    },
+    {
+      "idx": 300,
+      "url": "http://localhost:3000/api/premium/agent-task",
+      "method": "GET",
+      "amount": "0.03",
+      "transaction": "8e5d72bb-414d-478e-ba8f-f118a3f85229",
+      "status": 200,
+      "latencyMs": 309
+    }
+  ],
+  "timestamp": "2026-04-16T03:29:35.499Z"
+}

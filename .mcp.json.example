@@ -1,0 +1,17 @@
+{
+  "_note_": "Standalone example for agenticzk-mcp. The CANONICAL clone-and-play config (with the full set of deployed POKER_* + ERC-8004 registry addresses, auto-synced from latest.json) lives in the MAIN AgenticZK repo's .mcp.json.example. This MCP SIGNS NOTHING: every tool returns an unsigned tx the harness signs. The only secret it reads is PLAYER_SESSION_SEED (ZK mental-poker decrypt) — there is NO wallet private key here (the standalone Circle money tools that used PLAYER_PK were removed 2026-06-13).",
+  "mcpServers": {
+    "agenticzk": {
+      "command": "npx",
+      "args": ["tsx", "mcp-server/src/index.ts"],
+      "cwd": "/absolute/path/to/agenticzk-mcp",
+      "env": {
+        "ARC_READ_RPC_URL": "https://rpc.testnet.arc.network",
+        "ARC_TX_RPC_URL": "https://rpc.testnet.arc.network",
+        "ZK_ARTIFACTS_DIR": "/absolute/path/to/agenticzk/packages/circuits/build",
+        "PLAYER_SESSION_SEED": "<your-256-bit-hex-zk-session-seed>",
+        "_addresses_": "POKER_* contract addresses + IDENTITY_REGISTRY/REPUTATION_REGISTRY/VALIDATION_REGISTRY come from the main AgenticZK repo's .mcp.json.example (synced from packages/contracts/deployments/<chainId>/latest.json). Copy that env block here, or run this MCP as a child of the main repo's config."
+      }
+    }
+  }
+}

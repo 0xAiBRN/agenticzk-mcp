@@ -1,0 +1,593 @@
+{
+  "title": "Arcent Nano — edge-case probes",
+  "network": "arcTestnet",
+  "buyer": "0x29C2F998B325053F2e81532b5e3a44dac7A84978",
+  "seller": "http://localhost:3000",
+  "startGateway": "0.4463",
+  "endGateway": "0.3057",
+  "probes": [
+    {
+      "name": "parallel_10",
+      "ok": 10,
+      "fail": 0,
+      "details": [
+        {
+          "idx": 0,
+          "ok": true,
+          "ms": 476,
+          "txId": "43688149-6865-45e0-830e-f5dd558bb9e6"
+        },
+        {
+          "idx": 1,
+          "ok": true,
+          "ms": 533,
+          "txId": "82d4b508-8181-4f86-9723-4ac52fb74689"
+        },
+        {
+          "idx": 2,
+          "ok": true,
+          "ms": 450,
+          "txId": "56f82367-c8c5-4148-9c3c-7030fd74b9eb"
+        },
+        {
+          "idx": 3,
+          "ok": true,
+          "ms": 442,
+          "txId": "ea04825e-8429-420f-a1f9-997b292f872d"
+        },
+        {
+          "idx": 4,
+          "ok": true,
+          "ms": 461,
+          "txId": "6ca57826-b8b7-45bd-a5c1-3420fff74b37"
+        },
+        {
+          "idx": 5,
+          "ok": true,
+          "ms": 519,
+          "txId": "4024f234-e729-4914-a1aa-c9274963c3cd"
+        },
+        {
+          "idx": 6,
+          "ok": true,
+          "ms": 485,
+          "txId": "474f817e-78ea-4c64-9ddf-3eecf489432b"
+        },
+        {
+          "idx": 7,
+          "ok": true,
+          "ms": 534,
+          "txId": "022b52c6-9627-410f-a159-4518a63b1199"
+        },
+        {
+          "idx": 8,
+          "ok": true,
+          "ms": 494,
+          "txId": "f6ebf53f-3dec-4ca0-b787-7a7661f7bfe7"
+        },
+        {
+          "idx": 9,
+          "ok": true,
+          "ms": 505,
+          "txId": "55540802-ab44-43fc-9846-58207e01fe24"
+        }
+      ],
+      "notes": "10 unique tx ids, 10 settled concurrently",
+      "elapsedMs": 538
+    },
+    {
+      "name": "burst_20_nodelay",
+      "ok": 20,
+      "fail": 0,
+      "details": [
+        {
+          "idx": 0,
+          "ok": true,
+          "ms": 445,
+          "txId": "77f09d2a-69de-4244-a292-ffc8553cabd8"
+        },
+        {
+          "idx": 1,
+          "ok": true,
+          "ms": 428,
+          "txId": "b1f6e259-2216-43e0-bfcb-9b7799dd4625"
+        },
+        {
+          "idx": 2,
+          "ok": true,
+          "ms": 434,
+          "txId": "cba85213-b5dd-4166-b357-65f3cbbe1b27"
+        },
+        {
+          "idx": 3,
+          "ok": true,
+          "ms": 403,
+          "txId": "65fae339-c90d-4e04-9b6b-4b96c40a40bb"
+        },
+        {
+          "idx": 4,
+          "ok": true,
+          "ms": 413,
+          "txId": "c4d07f8b-e33d-4cd9-9ea0-850653442fa4"
+        },
+        {
+          "idx": 5,
+          "ok": true,
+          "ms": 755,
+          "txId": "739c9d38-44b9-46d1-8291-5334aff05b07"
+        },
+        {
+          "idx": 6,
+          "ok": true,
+          "ms": 475,
+          "txId": "b09c4c2b-23e4-4a32-913a-1c98bb107d9e"
+        },
+        {
+          "idx": 7,
+          "ok": true,
+          "ms": 374,
+          "txId": "07d20463-d0b1-4825-b6d2-f23db452ca75"
+        },
+        {
+          "idx": 8,
+          "ok": true,
+          "ms": 373,
+          "txId": "96b12c60-db47-482b-b30d-bbafe7b8aade"
+        },
+        {
+          "idx": 9,
+          "ok": true,
+          "ms": 414,
+          "txId": "1e2804f6-b804-4057-ac8a-a32b80ff4f91"
+        },
+        {
+          "idx": 10,
+          "ok": true,
+          "ms": 365,
+          "txId": "f165ca41-64fb-4e22-8967-1b830241200d"
+        },
+        {
+          "idx": 11,
+          "ok": true,
+          "ms": 382,
+          "txId": "e6849686-2816-4740-b429-a4d72d5d372d"
+        },
+        {
+          "idx": 12,
+          "ok": true,
+          "ms": 351,
+          "txId": "82e832d2-1463-459e-b02d-eb1ad4cd5f4b"
+        },
+        {
+          "idx": 13,
+          "ok": true,
+          "ms": 393,
+          "txId": "84e0e33f-9e23-4730-9112-ace55c971e79"
+        },
+        {
+          "idx": 14,
+          "ok": true,
+          "ms": 351,
+          "txId": "33d10b91-cbd9-41d4-87dc-c931272c2803"
+        },
+        {
+          "idx": 15,
+          "ok": true,
+          "ms": 361,
+          "txId": "b9c976e5-0b78-4d54-b906-9958925a84d2"
+        },
+        {
+          "idx": 16,
+          "ok": true,
+          "ms": 365,
+          "txId": "2ee6fcf6-1d43-4d6b-8dbf-ae988f432dc2"
+        },
+        {
+          "idx": 17,
+          "ok": true,
+          "ms": 403,
+          "txId": "8aa1112d-20c1-4f03-945b-fe303e906176"
+        },
+        {
+          "idx": 18,
+          "ok": true,
+          "ms": 382,
+          "txId": "570bfcbd-7d2b-4298-8268-c6ee0b33565d"
+        },
+        {
+          "idx": 19,
+          "ok": true,
+          "ms": 378,
+          "txId": "b28b1a1a-7a65-4fe9-95ac-be02586705a2"
+        }
+      ],
+      "notes": "20 sequential calls with 0ms delay — tests server throughput + gateway lane contention",
+      "elapsedMs": 8245
+    },
+    {
+      "name": "hammer_quote_30",
+      "ok": 30,
+      "fail": 0,
+      "details": [
+        {
+          "idx": 0,
+          "ok": true,
+          "ms": 360,
+          "txId": "630017c1-1cd4-43ae-a2b1-3e0eea938532"
+        },
+        {
+          "idx": 1,
+          "ok": true,
+          "ms": 406,
+          "txId": "2b60f89b-7053-4cf8-bd76-5d32268c19f7"
+        },
+        {
+          "idx": 2,
+          "ok": true,
+          "ms": 386,
+          "txId": "60ef4db9-df62-421d-8700-eb73413adffb"
+        },
+        {
+          "idx": 3,
+          "ok": true,
+          "ms": 383,
+          "txId": "d007bc23-027d-474b-b04a-87c9414d8ccc"
+        },
+        {
+          "idx": 4,
+          "ok": true,
+          "ms": 380,
+          "txId": "4e20e34b-c24b-4532-bff9-f9bc0af4e43c"
+        },
+        {
+          "idx": 5,
+          "ok": true,
+          "ms": 376,
+          "txId": "1c08dbfe-6641-488e-8393-afd25e3210a1"
+        },
+        {
+          "idx": 6,
+          "ok": true,
+          "ms": 392,
+          "txId": "330cb668-421d-4ecc-b731-cfcf7de474d6"
+        },
+        {
+          "idx": 7,
+          "ok": true,
+          "ms": 421,
+          "txId": "945d7d0a-0fde-4830-add0-4d9bc794b1a9"
+        },
+        {
+          "idx": 8,
+          "ok": true,
+          "ms": 402,
+          "txId": "3deee63c-6a7c-4887-a6e3-4f4011d39df0"
+        },
+        {
+          "idx": 9,
+          "ok": true,
+          "ms": 395,
+          "txId": "ccf25d11-5ad5-4a9b-b304-ea186b5c7630"
+        },
+        {
+          "idx": 10,
+          "ok": true,
+          "ms": 383,
+          "txId": "3f0ca60e-c23f-415e-8c1b-515d9f3dda7e"
+        },
+        {
+          "idx": 11,
+          "ok": true,
+          "ms": 392,
+          "txId": "90753b5e-0b9c-4d98-9943-fdb3c8d8a76c"
+        },
+        {
+          "idx": 12,
+          "ok": true,
+          "ms": 393,
+          "txId": "62fbfb01-e126-43f3-955f-8371881ddd30"
+        },
+        {
+          "idx": 13,
+          "ok": true,
+          "ms": 393,
+          "txId": "07a30bfa-23fa-4136-8770-1a6ab3ce1e2b"
+        },
+        {
+          "idx": 14,
+          "ok": true,
+          "ms": 389,
+          "txId": "582aee8c-1a4d-4218-b807-ca91ffc0b2d2"
+        },
+        {
+          "idx": 15,
+          "ok": true,
+          "ms": 373,
+          "txId": "a171f6ae-e203-40c0-8c00-5bbc745aeb58"
+        },
+        {
+          "idx": 16,
+          "ok": true,
+          "ms": 396,
+          "txId": "3897966a-192b-438f-94c5-aa730f979166"
+        },
+        {
+          "idx": 17,
+          "ok": true,
+          "ms": 396,
+          "txId": "98951afa-8762-425f-a510-e491aaf282b5"
+        },
+        {
+          "idx": 18,
+          "ok": true,
+          "ms": 384,
+          "txId": "88b8e37d-cd40-4260-a203-c78b20f3e8fc"
+        },
+        {
+          "idx": 19,
+          "ok": true,
+          "ms": 383,
+          "txId": "0c019210-d023-4d3b-81e0-805a0b470803"
+        },
+        {
+          "idx": 20,
+          "ok": true,
+          "ms": 356,
+          "txId": "732cfd55-f770-4df4-a795-8b9e18424761"
+        },
+        {
+          "idx": 21,
+          "ok": true,
+          "ms": 498,
+          "txId": "1a64802e-7fc6-46d2-bd56-1b6d2ce145e5"
+        },
+        {
+          "idx": 22,
+          "ok": true,
+          "ms": 394,
+          "txId": "deb6ee31-1cbe-4746-9e05-89b979e77439"
+        },
+        {
+          "idx": 23,
+          "ok": true,
+          "ms": 376,
+          "txId": "9ebece6b-f440-4d7f-943c-b5d8a36fb9aa"
+        },
+        {
+          "idx": 24,
+          "ok": true,
+          "ms": 399,
+          "txId": "e35648c9-a5f7-4ee2-a1b5-4375f3e9fe3f"
+        },
+        {
+          "idx": 25,
+          "ok": true,
+          "ms": 372,
+          "txId": "8a178af5-29cc-49d9-8a26-c39a18755821"
+        },
+        {
+          "idx": 26,
+          "ok": true,
+          "ms": 352,
+          "txId": "fc7af5e9-86ca-4730-b6c7-9d49e2ddb6b3"
+        },
+        {
+          "idx": 27,
+          "ok": true,
+          "ms": 410,
+          "txId": "41d2ad39-83a4-430b-bef4-2d6cdd28cccf"
+        },
+        {
+          "idx": 28,
+          "ok": true,
+          "ms": 358,
+          "txId": "c4521e0b-bf08-48ff-beec-2a3bcc160e30"
+        },
+        {
+          "idx": 29,
+          "ok": true,
+          "ms": 371,
+          "txId": "e55b77aa-96ca-4599-8ae9-10703c2d93da"
+        }
+      ],
+      "notes": "30× same endpoint (quote @ $0.001) with 100ms cadence",
+      "elapsedMs": 14922
+    },
+    {
+      "name": "cheap_compute_20",
+      "ok": 20,
+      "fail": 0,
+      "details": [
+        {
+          "idx": 0,
+          "ok": true,
+          "ms": 369,
+          "txId": "e665f4de-51ce-409e-927b-f23cc649136b"
+        },
+        {
+          "idx": 1,
+          "ok": true,
+          "ms": 392,
+          "txId": "45a08451-0565-47a2-b7a1-576d4b4ebdb3"
+        },
+        {
+          "idx": 2,
+          "ok": true,
+          "ms": 379,
+          "txId": "825db0f5-939b-4726-8c1f-db19afac07ab"
+        },
+        {
+          "idx": 3,
+          "ok": true,
+          "ms": 449,
+          "txId": "14950820-18c6-4a8e-9f0e-9c77a42e3a7d"
+        },
+        {
+          "idx": 4,
+          "ok": true,
+          "ms": 369,
+          "txId": "72682d99-4084-47d7-9111-8e320fdfdf4f"
+        },
+        {
+          "idx": 5,
+          "ok": true,
+          "ms": 359,
+          "txId": "55d6eeda-72df-4b8b-aa90-80d7e33946bb"
+        },
+        {
+          "idx": 6,
+          "ok": true,
+          "ms": 400,
+          "txId": "274e0a2e-462c-4e4b-8eba-577a95025f7b"
+        },
+        {
+          "idx": 7,
+          "ok": true,
+          "ms": 406,
+          "txId": "05c7c3f5-2b8b-4700-bad5-36966c49ae24"
+        },
+        {
+          "idx": 8,
+          "ok": true,
+          "ms": 404,
+          "txId": "35b04188-24c3-4ded-8ca5-c3b65e3144db"
+        },
+        {
+          "idx": 9,
+          "ok": true,
+          "ms": 374,
+          "txId": "c7f12bf9-5bd5-4e2e-93ae-787185477f72"
+        },
+        {
+          "idx": 10,
+          "ok": true,
+          "ms": 371,
+          "txId": "950ec158-fa08-4952-9b10-69e1bb085ae1"
+        },
+        {
+          "idx": 11,
+          "ok": true,
+          "ms": 371,
+          "txId": "6ed6b4f6-89bb-4b30-ac35-a56101606a27"
+        },
+        {
+          "idx": 12,
+          "ok": true,
+          "ms": 333,
+          "txId": "8a808213-d73a-4c5d-9b7f-9991b17f1d35"
+        },
+        {
+          "idx": 13,
+          "ok": true,
+          "ms": 364,
+          "txId": "6bf5e271-8797-4ebd-94ed-84045fa00de2"
+        },
+        {
+          "idx": 14,
+          "ok": true,
+          "ms": 420,
+          "txId": "f2e88ed2-a994-4b37-8279-fd0ccfe69076"
+        },
+        {
+          "idx": 15,
+          "ok": true,
+          "ms": 383,
+          "txId": "5eec3ad5-e616-4d58-9a25-ee1deb867138"
+        },
+        {
+          "idx": 16,
+          "ok": true,
+          "ms": 468,
+          "txId": "334bd6de-e62d-4b5e-8d0b-9584ca8affcd"
+        },
+        {
+          "idx": 17,
+          "ok": true,
+          "ms": 385,
+          "txId": "5a021478-34fc-4842-8acc-f8fc4ec6d7b9"
+        },
+        {
+          "idx": 18,
+          "ok": true,
+          "ms": 387,
+          "txId": "d6fbea01-e5eb-4e48-bd9b-03f13298ef28"
+        },
+        {
+          "idx": 19,
+          "ok": true,
+          "ms": 367,
+          "txId": "4a5eab37-d7b4-46ea-85ae-7fc794407718"
+        }
+      ],
+      "notes": "20× cheapest endpoint (compute @ $0.0003) — amount-boundary / precision test",
+      "elapsedMs": 11900
+    },
+    {
+      "name": "bad_url_3",
+      "ok": 0,
+      "fail": 3,
+      "details": [
+        {
+          "idx": 0,
+          "ok": false,
+          "ms": 2,
+          "error": "Request failed with status 404"
+        },
+        {
+          "idx": 1,
+          "ok": false,
+          "ms": 2,
+          "error": "Request failed with status 404"
+        },
+        {
+          "idx": 2,
+          "ok": false,
+          "ms": 2,
+          "error": "Request failed with status 404"
+        }
+      ],
+      "notes": "3× nonexistent endpoint — SHOULD fail gracefully without charging",
+      "elapsedMs": 610
+    },
+    {
+      "name": "reinit_5",
+      "ok": 5,
+      "fail": 0,
+      "details": [
+        {
+          "idx": 0,
+          "ok": true,
+          "ms": 347,
+          "txId": "662d3b30-1977-4013-94d9-a2afade18728"
+        },
+        {
+          "idx": 1,
+          "ok": true,
+          "ms": 378,
+          "txId": "a1b9fa93-e2a5-4bad-944b-2c1089829dcb"
+        },
+        {
+          "idx": 2,
+          "ok": true,
+          "ms": 372,
+          "txId": "1058ada9-3d36-4595-9d1c-86327246c91f"
+        },
+        {
+          "idx": 3,
+          "ok": true,
+          "ms": 380,
+          "txId": "1b3585bf-97c7-4b22-93c1-92ccc2f3c1dd"
+        },
+        {
+          "idx": 4,
+          "ok": true,
+          "ms": 382,
+          "txId": "18cb5024-e5ba-45b8-b204-76734c00b19a"
+        }
+      ],
+      "notes": "5× fresh GatewayClient per call — tests state persistence / nonce handling across instances",
+      "elapsedMs": 3402
+    }
+  ],
+  "timestamp": "2026-04-16T17:28:47.689Z"
+}

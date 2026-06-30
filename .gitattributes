@@ -1,0 +1,35 @@
+# Security review 2026-06-13 (A5/A10) — public/release bundle export discipline.
+# `git archive` (release tarball) auto-excludes these patterns, so a real .env /
+# wallet / key never lands in a published artifact. Ported from the main
+# AgenticZK repo, which had this guard while this (clone-and-play) repo did not.
+#
+# Test:
+#   git archive HEAD --format=tar.gz -o /tmp/mcp-release.tar.gz
+#   tar -tzf /tmp/mcp-release.tar.gz | grep -E "(\.env|wallets|\.audit|\.key|\.pem)"
+# (should be empty — only .env.example may appear)
+
+# Secrets — every .env variant, real .mcp.json, keys. .env.example stays in.
+.env                                                            export-ignore
+.env.*                                                          export-ignore
+*.env                                                           export-ignore
+*.env.bak*                                                      export-ignore
+*.bak                                                           export-ignore
+.mcp.json                                                       export-ignore
+
+# Wallet / private-key files (even if a symlink target is dereferenced)
+wallets/                                                        export-ignore
+wallets.json                                                    export-ignore
+*.key                                                           export-ignore
+*.pem                                                           export-ignore
+*privatekey*                                                    export-ignore
+private-key.txt                                                 export-ignore
+
+# Developer-only artifacts — audit reports + local Claude state + logs
+.audit/                                                         export-ignore
+.claude/                                                        export-ignore
+*.log                                                           export-ignore
+
+# Heavy / non-distributable build + dependency dirs
+node_modules/                                                   export-ignore
+mcp-server/dist/                                                export-ignore
+mcp-server/node_modules/                                        export-ignore

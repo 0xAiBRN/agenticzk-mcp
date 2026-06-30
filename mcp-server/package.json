@@ -1,0 +1,47 @@
+{
+  "name": "agenticzk-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "keywords": [
+    "mcp",
+    "arc",
+    "poker",
+    "usdc",
+    "erc-8004",
+    "erc-8183",
+    "agent",
+    "zk"
+  ],
+  "author": "AgenticZK (arcent) <0x@arcent.ink>",
+  "license": "MIT",
+  "description": "MCP server for AgenticZK — on-chain Texas Hold'em poker tools (ZK shuffle/decrypt prover) plus Arc agent primitives: ERC-8004 identity, ERC-8183 jobs, read-only balance. Unsigned-by-design (signs nothing).",
+  "homepage": "https://arcent.ink",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "circomlibjs": "^0.1.7",
+    "dotenv": "^17.4.1",
+    "snarkjs": "^0.7.6",
+    "viem": "^2.47.12",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "axios": "^1.16.0",
+      "ip-address": "^10.2.0",
+      "uuid": "^11.1.1",
+      "underscore": "^1.13.7"
+    }
+  }
+}

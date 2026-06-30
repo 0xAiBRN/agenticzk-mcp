@@ -1,0 +1,24 @@
+{
+  "name": "arcent-test-seller",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx server.ts",
+    "generate-wallets": "tsx generate-wallets.ts"
+  },
+  "dependencies": {
+    "@circle-fin/x402-batching": "^3.0.4",
+    "@x402/core": "^2.10.0",
+    "@x402/evm": "^2.10.0",
+    "dotenv": "^17.4.1",
+    "express": "^4.21.2",
+    "viem": "^2.47.12"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.0"
+  }
+}

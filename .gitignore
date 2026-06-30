@@ -1,0 +1,79 @@
+# Environment and secrets — cover EVERY .env variant (.env.testnet, agent.env,
+# wallet.env, *.env.bak), keep ONLY .env.example tracked. Mirrors the main repo
+# (security review 2026-06-13 A5: named-env variants were committable footgun).
+.env
+.env.*
+*.env
+*.env.bak*
+!.env.example
+.env.local
+.env.*.local
+wallets
+wallets.json
+*.key
+*.pem
+*privatekey*
+*private_key*
+
+# Claude Code local state
+.claude/
+
+# Audit reports (local only — keep findings out of public repo)
+.audit/
+
+# MCP config may contain secrets (KIT_KEY etc.) — use .mcp.json.example as template
+.mcp.json
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+dist/
+build/
+
+# TypeScript
+*.tsbuildinfo
+
+# Foundry
+contracts/out/
+contracts/cache/
+contracts/broadcast/*/*/run-*.json
+contracts/broadcast/*/*/run-*.txt
+contracts/lib/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
+logs/
+*.log
+
+# Receipts (runtime data)
+relayer/receipts/
+
+# Runtime data
+pids/
+*.pid
+*.seed
+
+# Test coverage
+coverage/
+*.lcov
+
+# External reference repos (cloned locally, not part of our codebase)
+research/external-repos/
+
+# Internal research scrapes (hackathon page HTML/JSON, ~16MB, not for public repo)
+research/lablab-scrape/
+
+# pnpm canonical — npm lockfile drift'ten kaçın (re-audit 2026-05-06)
+package-lock.json

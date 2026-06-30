@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  # audit 2026-05-22 Tema 8 — remote default branch 'main', burada 'master'
+  # vardı → main'e push CI tetiklemiyordu. Codex 2026-05-18 raporunda da
+  # işaretlendi. Her ikisi de listede kalır (ileride yeniden adlandırma olursa).
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  hygiene:
+    name: Hygiene — no home paths, no real .env (security review 2026-06-13 A8/A10)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # No absolute home paths in tracked files (leaks the username + breaks
+      # clone-and-play). os.homedir()/~ are fine; /home/<user> + /Users/<user>
+      # are not. .github excluded so this rule's own pattern doesn't self-match.
+      - name: No absolute home paths in tracked files
+        run: |
+          if git grep -nE '/home/[a-z]|/Users/[a-z]' -- . ':(exclude).github/'; then
+            echo "::error::Absolute home path leaked into a tracked file — use ~/, \$HOME, or a relative path."
+            exit 1
+          fi
+      # No real (regular-file) secret .env in the tree before publish.
+      - name: No real .env in the tree
+        run: bash scripts/check-no-real-env.sh
+
+  mcp-server:
+    name: MCP server — build + typecheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./mcp-server
+    steps:
+      - uses: actions/checkout@v4
+      # F-08 — mcp-server uses pnpm (pnpm-lock.yaml). The previous `npm ci` +
+      # npm cache config failed outright: there is no package-lock.json here.
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+          cache-dependency-path: ./mcp-server/pnpm-lock.yaml
+      - run: pnpm install --frozen-lockfile
+      - run: npx tsc --noEmit
+      - run: pnpm run build
+      # F-12 — node:test harness (ZK glue: canonical-deck commitment, etc.)
+      - run: pnpm run test
+
+  test-seller:
+    name: test-seller — typecheck
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./test-seller
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: ./test-seller/package-lock.json
+      - run: npm ci
+      # F-08 — the `|| true` mask that swallowed every typecheck failure was
+      # removed: a CI gate that cannot fail is not a gate. test-seller's x402
+      # dependency is bumped to ^3.0.4 separately (F-15).
+      - run: npx tsc --noEmit
