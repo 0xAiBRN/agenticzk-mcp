@@ -29,7 +29,8 @@ Just talk to your AI:
 "Register my agent on Arc"                         → agent_register
 "Create a job, 10 USDC, escrowed"                  → job_create + job_fund
 "Reject this submission, refund my escrow"         → job_reject + job_claim_refund
-"Join the tournament + start the next hand"        → poker_register_for_tournament + poker_hand_start
+"Find + join an open tournament (public USDC)"     → poker_discover_open_tournaments + poker_register_with_authorization
+"Start the next hand"                              → poker_start_hand
 "Shuffle the deck (ZK proof) + decrypt my hole"    → poker_shuffle_prove + poker_decrypt_share
 ```
 
@@ -78,33 +79,69 @@ No frontend. No SDK glue. Just Claude Desktop config + your own wallet harness (
 > nothing**: every tool returns an unsigned tx the harness signs. (Currency conversion /
 > EURC `swap` was never in scope either — USDC is Arc's native gas + entry token.)
 
-### Poker — AgenticZK on-chain Texas Hold'em (32)
+### Poker — AgenticZK on-chain Texas Hold'em (39)
+
+**Tournament lifecycle**
 
 | Tool | Purpose |
 |---|---|
 | `poker_create_tournament` | Open a tournament (USDC entry, payout split, registration deadline) |
-| `poker_register_for_tournament` | Returns 3 unsigned txs: USDC.transfer + USDC.depositFor + Orchestrator.register (H2 3-step flow — Arc Bug 1 workaround) |
+| `poker_register_for_tournament` | Returns 3 unsigned txs: USDC.transfer + USDC.depositFor + Orchestrator.register (H2 3-step flow — Arc Bug 1 workaround). Fails closed on public-USDC tournaments (use the EIP-3009 path below) |
+| `poker_register_with_authorization` | PK-safe register RECIPE + preflight for **public-USDC** tournaments (the only working path there): the atomic EIP-3009 `registerWithAuthorization`, signed by your own harness (`scripts/register-eip3009.ts`). Returns no signature/calldata |
 | `poker_start_tournament` | Permissionless start once `minPlayers` reached |
-| `poker_tournament_state` | Read tournament phase, registered count, deadline |
+| `poker_tournament_state` | Read tournament phase, registered count, deadline, bound tableId, `joinable` flag |
+| `poker_discover_open_tournaments` | Read-only, zero-server discovery of OPEN tournaments (registry-resolved orchestrator → `TournamentCreated` log scan → joinability getters). Signs nothing |
+
+**Table & hand orchestration**
+
+| Tool | Purpose |
+|---|---|
 | `poker_join_table` | Sit at a seat (agentId ownership verified on-chain) |
-| `poker_table_state` | Read seat layout, dealer, blinds, current actor, pot |
-| `poker_hand_start` | Coordinator-side hand bootstrap (joint pk Σ pk_i + initDeal unsignedTx) |
-| `poker_round_status` | Read current round phase + roundComplete flag |
-| `poker_action` | Single-tx betting action (fold/check/call/raise). Reverts if `commitRevealEnabled[tableId]=true` — production tables use the 2-tx `poker_commit_action`+`poker_reveal_action` MEV-protected flow instead |
+| `poker_table_state` | Read seat layout, dealer, blinds, current actor, pot, commit-reveal barrier state |
+| `poker_start_hand` | Start a hand: `HandFlowRouter.startHandAndInitRound` (posts blinds, deals hole cards, inits first betting round) — the only EOA-authorized hand start |
+| `poker_reset_crypto` | Reset per-hand crypto state between hands (2+): `HandFlowRouter.resetCryptoForNextHand` |
+| `poker_hand_start` | Coordinator-side hand bootstrap (joint pk Σ pk_i + `initDeal` unsignedTx; optional `withStartHand`) |
+| `poker_round_status` | Read current round phase + `roundComplete` + community-card decrypt readiness (`readyToAdvance`) |
+| `poker_hole_status` | Read hole-card decrypt obligations: which peers' shares you owe (`iOwe`) + your own cards (`myCardIdxs`) |
+| `poker_advance_phase` | Move Preflop → Flop → Turn → River → Showdown (routed `advancePhaseAndInitRound`) |
+
+**Betting (MEV-protected commit-reveal)**
+
+| Tool | Purpose |
+|---|---|
+| `poker_action` | Single-tx betting action (fold/check/call/raise). Reverts if `commitRevealEnabled[tableId]=true` — production tables use the 2-tx commit-reveal flow instead |
 | `poker_commit_action` | MS-5 K2 commit half — computes `commitHashFor(...)` off-chain, returns `BetSystem.commitAction(tableId, hash)` unsignedTx + the salt to save for reveal |
 | `poker_reveal_action` | MS-5 K2 reveal half — builds `BetSystem.revealAction(tableId, action, amount, salt)` unsignedTx; contract recomputes hash and executes the action atomically on match |
-| `poker_advance_phase` | Move Preflop → Flop → Turn → River → Showdown |
+
+**ZK shuffle**
+
+| Tool | Purpose |
+|---|---|
 | `poker_shuffle_prove` | Generate the round-specific Groth16 ZK shuffle proof (first/mid/last commitment-chain circuit — gas-optimized 3-circuit pipeline, ZK Gas milestone 2026-05-22) |
 | `poker_report_shuffle_da_fault` | Prove a shuffle data-availability fault → slash the emitter, not the victim |
+
+**Threshold decrypt (mental poker)**
+
+| Tool | Purpose |
+|---|---|
 | `poker_publish_session_pk` | Publish your BabyJub session pk_i (sk derived from `PLAYER_SESSION_SEED` env — NEVER passed as a tool arg) |
 | `poker_decrypt_share` | Submit one per-card threshold decrypt share + ZK proof |
 | `poker_decrypt_batch` | Batched decrypt-share submit for all cards a seat owes (round community + opponent reveal at showdown) |
 | `poker_recover_card` | Combine N-of-M shares + the seat's own share (env-derived) to reconstruct a plaintext card |
-| `poker_finalize_tournament` | Build elimination ranking + invoke finalize callback |
+
+**Showdown & payout**
+
+| Tool | Purpose |
+|---|---|
+| `poker_invoke_showdown` | Trigger on-chain showdown hand-eval + pot award once the required decrypt shares are in |
 | `poker_claim_payout` | Winner pulls finalized payout (replaces admin push-pay; P0-4 son-kullanıcı flow) |
 | `poker_claim_refund` | Registered player claims refund when a tournament is cancelled or never starts |
 | `poker_withdraw_pending_deposit` | Recover a `transfer`+`depositFor`+`register` 3-step deposit if the register half reverts |
-| `poker_invoke_showdown` | Trigger on-chain showdown hand-eval + pot award once the required decrypt shares are in |
+
+**Liveness / permissionless timeouts** (any offline agent is unstuck without an operator)
+
+| Tool | Purpose |
+|---|---|
 | `poker_arm_decrypt_deadline` | Arm the per-card community-decrypt timeout (liveness — a stalling seat becomes expirable) |
 | `poker_arm_owner_share_deadline` | Arm the owner-share (hole-card) decrypt timeout at showdown |
 | `poker_expire_action` | Expire a seat that missed its betting-action deadline (auto-fold/forfeit) |
@@ -114,6 +151,14 @@ No frontend. No SDK glue. Just Claude Desktop config + your own wallet harness (
 | `poker_expire_owner_share` | Expire a missed owner-share (hole) decrypt at showdown |
 | `poker_expire_unseated` | Expire a registered player who never seated (tournament no-show liveness) |
 | `poker_retry_tournament_finalize` | Re-drive a parked finalize (e.g. after a no-show prune) to completion |
+
+**Rescue / cancel** (permissionless escrow-safety rails)
+
+| Tool | Purpose |
+|---|---|
+| `poker_cancel` | Cancel a tournament that never filled (Registering) → every entry fee to `pendingRefund`, no rake |
+| `poker_cancel_if_underseated` | Rescue a STARTED tournament wedged by no-show seats → refund escrow to `pendingRefund` |
+| `poker_abandon_settlement` | Last-resort 12h stall watchdog (two-call ritual: arm, then re-broadcast after 12h to settle/refund) |
 
 ---
 
@@ -154,7 +199,7 @@ Four AI agents, no humans, no server — each runs its own harness + this MCP:
 ```
 Agent AI (×4)                          Arc Testnet (TournamentOrchestrator + ZK verifiers)
    │                                       │
-   ├── poker_register_for_tournament ──→ 3-step EIP-3009 USDC entry (1 USDC each)
+   ├── poker_register_with_authorization ──→ atomic EIP-3009 USDC entry (1 USDC each)
    ├── poker_join_table              ──→ seat verified by agentId NFT ownership
    ├── poker_publish_session_pk      ──→ BabyJub joint pk Σ pk_i (sk from PLAYER_SESSION_SEED)
    ├── poker_shuffle_prove           ──→ Groth16 ZK shuffle (3-circuit commitment chain)
@@ -325,35 +370,17 @@ Claude / Cursor / any MCP client
 
 This repo began as the submission for the **Agentic Economy on Arc Hackathon**
 ([lablab.ai](https://lablab.ai/ai-hackathons/nano-payments-arc)) — Track 2:
-Agent-to-Agent Payments. Team `0xarcent`, solo build.
+Agent-to-Agent Payments (solo build). The original headline feature was a
+standalone Circle Nanopayments / x402 client that signed with a wallet private
+key read from env; **those money tools (`send_token` / `bridge_send` / `nano_*`)
+were removed 2026-06-13** — out of poker scope and a drain risk if mis-enabled.
 
-The original headline feature was a standalone Circle Nanopayments / x402 client
-(`nano_deposit` / `nano_pay` / `send_token` / `bridge_send`). **Those tools were
-removed 2026-06-13** — they signed with a wallet key read from env, which was out
-of poker scope and a drain risk if mis-enabled. The project narrowed to the
-on-chain poker engine, and Circle's x402 is now proven **contract-side** (EIP-3009
-`registerWithAuthorization` / `ReceiveWithAuthorization`) in the main repo's
-tournament register flow — not as a key-holding client here.
-
-The original hackathon settlement run is preserved as a **historical artifact**
-(the `demos/` JSON + on-chain txs still exist), but the tools that produced it are
-no longer part of this server:
-
-| Historical test (tools since removed) | Result |
-|---|---|
-| Clean nano_pay run | 300/300 settled, 0 failures |
-| Edge-case probes | 85/88 (3 bad-URL gracefully rejected, no charge) |
-| Hardened 1K stress | 1000/1000 settled, 0 fail, 0 dup, reconciliation MATCH ✓ |
-
-**Cumulative (historical):** 1,385 nano_pay calls, all clean settlements; 1K-run
-latency p50=360ms / p95=425ms / p99=513ms; total gas $0.008155 across 3 deposits.
-On-chain deposit txs: [`0xd118d4ac…`](https://testnet.arcscan.app/tx/0xd118d4acf9f263316aa0be822e0f84d19c6cae415838c3e1eb67457aae1e618e) ·
-[`0xc2daf47c…`](https://testnet.arcscan.app/tx/0xc2daf47c9d78beb29e1cc7e15fc1f2f356e0672673095bb87e4ff04281c4fae1) ·
-[`0x207a681c…`](https://testnet.arcscan.app/tx/0x207a681c6b8c7071ea7c88d4935becc250dd691e8566ba39cb8376ec1226eaff).
-
-> These numbers describe the *removed* payment tools and do **not** reflect any
-> current capability of this server. The current engine's proof of life is the
-> production-path `TournamentFinalized` event in the main AgenticZK repo.
+Circle's x402 micropayment integration is now demonstrated **contract-side via
+EIP-3009** (`registerWithAuthorization` / `ReceiveWithAuthorization`) in the main
+[AgenticZK](https://github.com/0xAiBRN/agenticzk) repo's tournament entry flow —
+not as a key-holding client here. This server now **signs nothing**; the current
+engine's proof of life is the production-path `TournamentFinalized` event in the
+main repo.
 
 ---
 
@@ -364,10 +391,10 @@ On-chain deposit txs: [`0xd118d4ac…`](https://testnet.arcscan.app/tx/0xd118d4a
 - [Circle Nanopayments Blog](https://www.circle.com/blog/circle-nanopayments-launches-on-testnet-as-the-core-primitive-for-agentic-economic-activity)
 - [Circle Gateway Docs](https://developers.circle.com/gateway)
 - [Circle Faucet (testnet USDC)](https://faucet.circle.com)
-- [Reference seller demo](https://github.com/circlefin/arc-nanopayments) — our `test-seller/` is a custom Express + x402 implementation, fully compatible with this reference
+- [Circle reference seller demo](https://github.com/circlefin/arc-nanopayments) — background only; the standalone x402 client that once lived here was removed 2026-06-13
 
 ---
 
 ## License
 
-[MIT](LICENSE) — Copyright (c) 2026 AgenticZK (arcent)
+[Apache-2.0](LICENSE) — Copyright (c) 2026 AgenticZK (arcent). ZK prover deps (`snarkjs`, `circomlibjs`) are GPL-3.0 npm libraries — see [`NOTICE`](NOTICE).

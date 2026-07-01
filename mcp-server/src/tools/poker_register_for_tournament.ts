@@ -2,6 +2,7 @@ import { encodeFunctionData, parseUnits } from "viem";
 import { config } from "../config.js";
 import { PokerOrchestratorAbi } from "../poker-abis.js";
 import { ERC20Abi, readContractWithRetry } from "../chains.js";
+import { resolveActiveOrchestrator } from "../resolve-orchestrator.js";
 import { okResult, errorResult, err } from "../errors.js";
 import { validateAddress } from "../validate.js";
 
@@ -43,6 +44,15 @@ export async function pokerRegisterForTournamentHandler(args: {
     return errorResult(err("E_INVALID_ENTRY_FEE", `entryFeeUsdc must be a numeric string: ${(e as Error).message}`));
   }
 
+  // Resolve the canonical orchestrator (drift-proof) — the SAME resolution
+  // poker_register_with_authorization / poker_discover_open_tournaments /
+  // poker_tournament_state use. Reads ProtocolRegistry.getActiveRelease() when a
+  // registry is configured, else falls back to the env POKER_ORCHESTRATOR. This
+  // keeps both register paths (3-step + EIP-3009) targeting the same active/gated
+  // orchestrator, so a stale env address can never split them. Read-only.
+  const resolved = await resolveActiveOrchestrator();
+  const orchestrator = resolved.orchestrator;
+
   // 2026-06-22 (Path B build, FIX-1) — FAIL-CLOSED public-USDC gate. On a
   // public-USDC tournament the orchestrator disables depositFor; the 3-step
   // chain below would then revert at step 2 (DepositForDisabledForPublicUsdc)
@@ -53,7 +63,7 @@ export async function pokerRegisterForTournamentHandler(args: {
   // funds. Local MockERC20 / CHIP dev (isPublicUsdcOnly==false) is unaffected.
   try {
     const publicUsdcOnly = (await readContractWithRetry({
-      address: config.pokerOrchestrator,
+      address: orchestrator,
       abi: PokerOrchestratorAbi,
       functionName: "isPublicUsdcOnly",
       args: [],
@@ -94,7 +104,7 @@ export async function pokerRegisterForTournamentHandler(args: {
   const transferData = encodeFunctionData({
     abi: ERC20Abi,
     functionName: "transfer",
-    args: [config.pokerOrchestrator, entryFee],
+    args: [orchestrator, entryFee],
   });
 
   const depositForData = encodeFunctionData({
@@ -122,7 +132,7 @@ export async function pokerRegisterForTournamentHandler(args: {
       {
         step: 2,
         purpose: "Orchestrator depositFor (credit depositor-bound slot)",
-        to: config.pokerOrchestrator,
+        to: orchestrator,
         data: depositForData,
         value: "0",
         chainId: config.arcChainId,
@@ -130,7 +140,7 @@ export async function pokerRegisterForTournamentHandler(args: {
       {
         step: 3,
         purpose: "Tournament register (consumes pendingDeposit)",
-        to: config.pokerOrchestrator,
+        to: orchestrator,
         data: registerData,
         value: "0",
         chainId: config.arcChainId,
@@ -139,6 +149,8 @@ export async function pokerRegisterForTournamentHandler(args: {
     player,
     tournamentId,
     agentId: agentId.toString(),
+    orchestrator,
+    orchestratorSource: resolved.source,
     entryFeeUsdc: args.entryFeeUsdc ?? "1.00",
     entryFeeRaw: entryFee.toString(),
     // Fee disclosure (hard-audit 2026-06-12 M4 / HC#11) — the MCP "Yol B" onboarding

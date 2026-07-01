@@ -1,0 +1,72 @@
+AgenticZK MCP (agenticzk-mcp)
+Copyright (c) 2026 AgenticZK (arcent)
+
+This product is the MCP (Model Context Protocol) server for the AgenticZK
+project. It is licensed under the Apache License, Version 2.0 — see the LICENSE
+file in the project root for the full text.
+
+This NOTICE file is provided for third-party attribution and to disclose the
+license of the runtime dependencies this server relies on. It does not add
+restrictions to the Apache-2.0-licensed project code; it documents provenance.
+
+================================================================================
+Project code
+================================================================================
+
+All first-party source under `mcp-server/src/**` and the repository scripts are
+licensed under the Apache License, Version 2.0 (LICENSE).
+
+The MCP server SIGNS NOTHING: every tool returns an unsigned transaction the
+caller's own wallet/harness signs. See SECURITY.md.
+
+================================================================================
+Third-party runtime dependencies
+================================================================================
+
+Resolved from the npm registry at install time (node_modules), not vendored into
+this repository's source tree:
+
+1. @modelcontextprotocol/sdk
+   Licensed under MIT.
+   The MCP server/transport framework.
+
+2. viem
+   Licensed under MIT.
+   Ethereum/EVM client — encodes the unsigned calldata returned by the tools and
+   performs read-only RPC.
+
+3. zod
+   Licensed under MIT.
+   Runtime schema validation for tool arguments.
+
+4. dotenv
+   Licensed under BSD-2-Clause.
+   Loads environment configuration.
+
+5. snarkjs
+   Licensed under GPL-3.0.
+   Groth16 proof generation for the ZK shuffle / decrypt prover tools
+   (poker_shuffle_prove, poker_report_shuffle_da_fault, poker_decrypt_share,
+   poker_decrypt_batch). Used as an unmodified runtime library dependency; its
+   source is NOT bundled or vendored into this repository.
+
+6. circomlibjs
+   Licensed under GPL-3.0.
+   BabyJubJub / Poseidon primitives used by the ZK session-key and decrypt math.
+   Used as an unmodified runtime library dependency; its source is NOT bundled or
+   vendored into this repository.
+
+Items 5 and 6 (snarkjs, circomlibjs) are GPL-3.0. They are consumed as separate,
+unmodified npm packages at runtime. Redistributors of the ZK proving pipeline
+should observe the GPL-3.0 terms of those upstream packages.
+
+================================================================================
+ZK trusted setup
+================================================================================
+
+The ZK prover tools consume verifying-key / proving-key (.zkey) artifacts and
+circuit build outputs produced in the main AgenticZK repository. The current
+artifacts come from a single-party Powers of Tau ceremony intended for
+development and testnet use ONLY. They are NOT safe for mainnet or any high-value
+deployment until replaced by the output of a public multi-party (>=10 participant)
+ceremony. See the main repo's docs/CEREMONY_OUTREACH.md for ceremony status.

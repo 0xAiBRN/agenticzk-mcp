@@ -20,7 +20,7 @@
     "zk"
   ],
   "author": "AgenticZK (arcent) <0x@arcent.ink>",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "description": "MCP server for AgenticZK — on-chain Texas Hold'em poker tools (ZK shuffle/decrypt prover) plus Arc agent primitives: ERC-8004 identity, ERC-8183 jobs, read-only balance. Unsigned-by-design (signs nothing).",
   "homepage": "https://arcent.ink",
   "dependencies": {
